@@ -31,12 +31,18 @@ const subtract = (numA, numB) => {
 
 const multiply = (numA, numB) => {
   // * to get a product then return it
+  const product = numA * numB
   // Open up the inspector tool in Chrome and select the Console tab to see what this functions is "logging out" to the console.
+  return product
   console.log(numA, numB)
 }
 
-const divide = null
-// / to get a quotient,
+const divide = (numA, numB) => {
+  const quotient = numA / numB;
+  console.log(numA, numB)
+}
+
+
 
 const modulus = null
 // and % to get a remainder.
@@ -64,13 +70,38 @@ const equals = () => {
     break;
     case "subtraction": putResultInElement(subtract(firstNum, secondNum)) 
     break;
-    case "multiplication": multiply(firstNum, secondNum) 
+    case "multiplication": putResultInElement(multiply(firstNum, secondNum)) 
     break;
-    case "division": console.log(divide(firstNum, secondNum)) 
+    case "division": putResultInElement(divide(firstNum, secondNum)) 
     break;
-    case "modulus": console.log(modulus(firstNum, secondNum)) 
+    case "modulus": putResultInElement(modulus(firstNum, secondNum)) 
     break;
     default: "Choose an operation"
   }
 }
+
+
+// function clear() {
+//   document.getElementById("result").value = null;
+// }
+
+// document.getElementById("result").addEventListener("click", function() {
+//   clear();
+// });
+
+
+
+const clear = () => {
+  // console.log("insideClear")
+  document.getElementById("result").innerHTML = "";
+}
+
+document.getElementById("clear").addEventListener("click", function() {
+  // console.log('click')
+  clear();
+});
+
+
+
+
 
